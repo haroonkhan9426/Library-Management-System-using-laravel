@@ -17,7 +17,7 @@ class BooksController extends Controller
   public function index()
   {
     $books = books::all();
-    return view('booksList', $books);
+    return view('booksList', ['books'=> $books]);
   }
 
   /**
@@ -44,7 +44,7 @@ class BooksController extends Controller
    */
   public function store(Request $request)
   {
-    $book = new books;
+    $book = new books();
 
     $book->bookTitle = $request->title;
     $book->edition = $request->edition;

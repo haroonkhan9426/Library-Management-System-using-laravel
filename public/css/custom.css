@@ -307,3 +307,10 @@ td {
   margin-left: 0px;
     margin-right: -57px;
 }
+
+.studentType{
+  display: none;
+}
+.staffType{
+  display: none;
+}

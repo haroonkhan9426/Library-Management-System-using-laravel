@@ -15,6 +15,7 @@ class CreateMemStaffsTable extends Migration
     {
         Schema::create('mem_staffs', function (Blueprint $table) {
           $table->unsignedInteger('memId');
+          $table->primary('memId');
           $table->foreign('memId')->references('memId')->on('members');
           $table->string('designation', 100);
         });

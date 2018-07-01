@@ -22,7 +22,7 @@ class CreateMembersTable extends Migration
           $table->string('cnic', 20)->default('null')->nullable();
           $table->string('address', 200)->default('null')->nullable();
           $table->string('dept', 100)->default('null')->nullable();
-          $table->string('memType', 4)->nullable(false);
+          $table->string('memType', 10)->nullable(false);
           $table->string('password', 100)->nullable(false);
           $table->string('regNo', 20)->default('null')->nullable();
           $table->string('picLink', 200)->default('null')->nullable();

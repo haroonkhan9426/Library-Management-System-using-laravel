@@ -16,17 +16,11 @@ Route::get('/test', function(){
 });
 Route::post('/issueBookSubmit', 'BooksIssuedController@index');
 
+Route::get('/booksList', 'BooksController@index');
 Route::get('/addBooks', 'BooksController@create');
 Route::post('/addBooks', 'BooksController@store');
 
-Route::get('/booksList', function () {
-    return view('booksList');
-});
-
-Route::get('/categoriesList', function () {
-    return view('booksCat');
-});
-
+Route::get('/categoriesList','BooksCategoryController@index');
 Route::get('/addCategories', 'BooksCategoryController@create');
 Route::post('/addCategories', 'BooksCategoryController@store');
 
@@ -34,18 +28,14 @@ Route::post('/addCategories', 'BooksCategoryController@store');
 Route::get('/issueBooks', function () {
     return view('issueBooks');
 });
-
 Route::get('/issuedBooks', function () {
     return view('issuedBooks');
 });
 
-Route::get('/addMembers', 'MemberController@index');
-
+Route::get('/membersList', 'MemberController@index');
+Route::get('/addMembers',  'MemberController@create');
 Route::post('/addMembers', 'MemberController@store');
 
-Route::get('/membersList', function () {
-    return view('membersList');
-});
 
 Route::get('/returnBooks', function () {
     return view('returnBookss');

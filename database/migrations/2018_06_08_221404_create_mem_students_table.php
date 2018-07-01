@@ -15,6 +15,7 @@ class CreateMemStudentsTable extends Migration
     {
         Schema::create('mem_students', function (Blueprint $table) {
             $table->unsignedInteger('memId');
+            $table->primary('memId');
             $table->foreign('memId')->references('memId')->on('members');
             $table->string('regNo', 20)->nullable(false);
             $table->unsignedInteger('batch')->nullable(false);

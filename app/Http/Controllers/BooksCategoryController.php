@@ -14,7 +14,8 @@ class BooksCategoryController extends Controller
      */
     public function index()
     {
-        //
+        $cats = booksCategory::all();
+        return view('booksCat', ['cats' => $cats]);
     }
 
     /**

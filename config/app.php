@@ -41,6 +41,7 @@ return [
 
     'debug' => env('APP_DEBUG', false),
 
+    'domain' => env('SESSION_DOMAIN', null),
     /*
     |--------------------------------------------------------------------------
     | Application URL
