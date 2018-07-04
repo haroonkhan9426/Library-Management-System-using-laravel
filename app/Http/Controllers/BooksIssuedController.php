@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\booksIssued;
 
 class BooksIssuedController extends Controller
 {
@@ -13,9 +14,10 @@ class BooksIssuedController extends Controller
    */
   public function index()
   {
-      //
+      $books = booksIssued::all();
+      return view('issuedBooks', ['books' => $books]);
   }
-
+  
   /**
    * Show the form for creating a new resource.
    *
@@ -23,7 +25,7 @@ class BooksIssuedController extends Controller
    */
   public function create()
   {
-      return view('addCategory');
+      return view('issueBooks');
   }
 
   /**
@@ -32,13 +34,16 @@ class BooksIssuedController extends Controller
    * @param  \Illuminate\Http\Request  $request
    * @return \Illuminate\Http\Response
    */
-  public function store(Request $request)
+  public function store(Request $req)
   {
-      $cat = new booksCategory;
+      $check = booksIssued::create([
+        'issueDate' => $req->issueDate,
+        'retDate' => $req->returnDate,
+        'bookId' => $req->bookId,
+        'memId' => $req->memberId
+      ]);
 
-      $cat->catName = $request->catName;
-
-      $cat->save();
+      return redirect('/issueBooks');
   }
 
   /**

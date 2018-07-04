@@ -25,21 +25,17 @@ Route::get('/addCategories', 'BooksCategoryController@create');
 Route::post('/addCategories', 'BooksCategoryController@store');
 
 
-Route::get('/issueBooks', function () {
-    return view('issueBooks');
-});
-Route::get('/issuedBooks', function () {
-    return view('issuedBooks');
-});
+Route::get('/issuedBooks','BooksIssuedController@index');
+Route::post('/issueBooks', 'BooksIssuedController@store');
+Route::get('/issueBooks', 'BooksIssuedController@create');
+
 
 Route::get('/membersList', 'MemberController@index');
 Route::get('/addMembers',  'MemberController@create');
 Route::post('/addMembers', 'MemberController@store');
 
-
-Route::get('/returnBooks', function () {
-    return view('returnBookss');
-});
+Route::get('/returnBooks', 'BooksReturnedController@create');
+Route::post('/returnBooks', 'BooksReturnedController@store');
 
 Route::get('/addThesis', 'ThesisController@create');
 Route::post('/addThesis', 'ThesisController@store');

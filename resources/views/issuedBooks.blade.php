@@ -8,97 +8,28 @@
     <table class="table table-hover table-bordered">
       <thead>
         <tr>
-          <th scope="col">BookID</th>
-          <th scope="col">Title</th>
-          <th scope="col">Category</th>
-          <th scope="col">Author</th>
-          <th scope="col">Details</th>
-          <th scope="col">Books Available</th>
+          <th scope="col">Issue ID</th>
+          <th scope="col">Issue Date</th>
+          <th scope="col">Return Date</th>
+          <th scope="col">Book Name</th>
+          <th scope="col">Member Issued</th>
           <th scope="col">Action</th>
-
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td>1</td>
-          <td>Circuit and Systems II</td>
-          <td>Electrical Engineering</td>
-          <td>Dr. Arbab Masood</td>
-          <td>Donated By Haroon khan from Peshawar</td>
-          <td>23</td>
+          @foreach($books as $book)
+          <td>{{$book->issueId}}</td>
+          <td>{{$book->issueDate}}</td>
+          <td>{{$book->returnDate}}</td>
+          <td>{{$book->bookId}}</td>
+          <td>{{$book->memId}}</td>
           <td>
             <span><button type="button" class="btn btn-primary btn-xs"><i class="glyphicon glyphicon-edit"></i></button></span>
             <span><button type="button" class="btn btn-primary btn-xs"><i class="glyphicon glyphicon-trash"></i></button></span>
-
           </td>
-
         </tr>
-        <tr>
-          <td>1</td>
-          <td>Circuit and Systems II</td>
-          <td>Electrical Engineering</td>
-          <td>Dr. Arbab Masood</td>
-          <td>Donated By Haroon khan from Peshawar</td>
-          <td>23</td>
-          <td>
-            <span><button type="button" class="btn btn-primary btn-xs"><i class="glyphicon glyphicon-edit"></i></button></span>
-            <span><button type="button" class="btn btn-primary btn-xs"><i class="glyphicon glyphicon-trash"></i></button></span>
-
-          </td>
-
-        </tr>
-        <tr>
-          <td>1</td>
-          <td>Circuit and Systems II</td>
-          <td>Electrical Engineering</td>
-          <td>Dr. Arbab Masood</td>
-          <td>Donated By Haroon khan from Peshawar</td>
-          <td>23</td>
-          <td>
-            <span><button type="button" class="btn btn-primary btn-xs"><i class="glyphicon glyphicon-edit"></i></button></span>
-            <span><button type="button" class="btn btn-primary btn-xs"><i class="glyphicon glyphicon-trash"></i></button></span>
-
-          </td>
-
-        </tr>
-        <tr>
-          <td>1</td>
-          <td>Circuit and Systems II</td>
-          <td>Electrical Engineering</td>
-          <td>Dr. Arbab Masood</td>
-          <td>Donated By Haroon khan from Peshawar</td>
-          <td>23</td>
-          <td>
-            <span><button type="button" class="btn btn-primary btn-xs"><i class="glyphicon glyphicon-edit"></i></button></span>
-            <span><button type="button" class="btn btn-primary btn-xs"><i class="glyphicon glyphicon-trash"></i></button></span>
-
-          </td>
-
-        </tr>
-        <tr>
-          <td>1</td>
-          <td>Circuit and Systems II</td>
-          <td>Electrical Engineering</td>
-          <td>Dr. Arbab Masood</td>
-          <td>Donated By Haroon khan from Peshawar</td>
-          <td>23</td>
-          <td>
-            <span><button type="button" class="btn btn-primary btn-xs"><i class="glyphicon glyphicon-edit"></i></button></span>
-            <span><button type="button" class="btn btn-primary btn-xs"><i class="glyphicon glyphicon-trash"></i></button></span>
-
-          </td>
-
-        </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>Jacob</td>
-          <td>Thornton</td>
-          <td>@fat</td>
-        </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td colspan="2">Larry the Bird</td>
-          <td>@twitter</td>
+        @endforeach
   </div>
 </div>
 
