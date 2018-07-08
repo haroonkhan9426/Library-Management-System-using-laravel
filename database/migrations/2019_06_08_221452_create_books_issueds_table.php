@@ -14,13 +14,13 @@ class CreateBooksIssuedsTable extends Migration
     public function up()
     {
         Schema::create('books_issueds', function (Blueprint $table) {
+            $table->increments('issueId');
             $table->dateTime('issueDate')->nullable(false);
             $table->dateTime('retDate')->nullable(false);
             $table->unsignedInteger('bookId')->nullable(false);
             $table->unsignedInteger('memId')->nullable(false);
             $table->foreign('bookId')->references('bookId')->on('books');
             $table->foreign('memId')->references('memId')->on('members');
-            $table->primary(['memId', 'bookId']);
         });
     }
 

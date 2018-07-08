@@ -20,4 +20,12 @@ class member extends Model
     public function memStudent(){
       return $this->belongsTo('App\memStudent');
     }
+
+    public function issuedBooks(){
+      return $this->hasMany('App\booksIssued');
+    }
+
+    public function returnBooks(){
+      return $this->hasMany('App\booksReturned');
+    }
 }

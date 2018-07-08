@@ -24,7 +24,7 @@ class BooksReturnedController extends Controller
      */
     public function create()
     {
-        //
+        return view('returnBooks');
     }
 
     /**
@@ -33,9 +33,15 @@ class BooksReturnedController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $req)
     {
-        //
+        booksReturned::create([
+          'bookId' => $req->bookId,
+          'memId' => $req->memberId,
+          'retDate' => $req->returnDate
+        ]);
+
+        return redirect('returnBooks');
     }
 
     /**
