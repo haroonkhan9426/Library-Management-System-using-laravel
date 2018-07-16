@@ -18,16 +18,19 @@ class ThesisController extends Controller
     */
 
     public function store(Request $req){
+      if(Auth::check()){
+        $thesis = new thesis;
+        $thesis->thesisTitle = $req->title;
+        $thesis->mem1ID = $req->mem1Id;
+        $thesis->mem2ID = $req->mem2Id;
+        $thesis->mem3ID = $req->mem3Id;
+        $thesis->supName = $req->supName;
+        $thesis->save();
+      }else {
+        return redirect('auth/login');
+      }
 
-      $thesis = new thesis;
 
-      $thesis->thesisTitle = $req->title;
-      $thesis->mem1ID = $req->mem1Id;
-      $thesis->mem2ID = $req->mem2Id;
-      $thesis->mem3ID = $req->mem3Id;
-      $thesis->supName = $req->supName;
-
-      $thesis->save();
     }
 
     /**

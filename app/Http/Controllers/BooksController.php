@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\books;
 use App\authors;
 use App\booksCategory;
+use Auth;
 
 class BooksController extends Controller
 {
@@ -16,8 +17,12 @@ class BooksController extends Controller
    */
   public function index()
   {
-    $books = books::all();
-    return view('booksList', ['books'=> $books]);
+    if(Auth::check()){
+      $books = books::all();
+      return view('booksList', ['books'=> $books]);
+    }else{
+      return redirect('auth/login');
+    }
   }
 
   /**
@@ -28,10 +33,13 @@ class BooksController extends Controller
   public function create()
   {
 
-    $auths = authors::all();
-    $cats = booksCategory::all();
-
-    return view('addBooks', array('auths' => $auths, 'cats'=> $cats ));
+    if(Auth::check()){
+      $auths = authors::all();
+      $cats = booksCategory::all();
+      return view('addBooks', array('auths' => $auths, 'cats'=> $cats ));
+    }else{
+      return redirect('auth/login');
+    }
 
       //return "Create Function called";
   }
@@ -44,16 +52,20 @@ class BooksController extends Controller
    */
   public function store(Request $request)
   {
-    $book = new books();
 
-    $book->bookTitle = $request->title;
-    $book->edition = $request->edition;
-    $book->authId = authors::where('name', $request->author)->first()->authId;
-    $book->catId = booksCategory::where('catName', '=', $request->cat)->first()->catId;
-    $book->totalAvail = $request->booksAvail;
+    if(Auth::check()){
+      $book = new books();
+      $book->bookTitle = $request->title;
+      $book->edition = $request->edition;
+      $book->authId = authors::where('name', $request->author)->first()->authId;
+      $book->catId = booksCategory::where('catName', '=', $request->cat)->first()->catId;
+      $book->totalAvail = $request->booksAvail;
 
-    $book->save();
-    return redirect('/home');
+      $book->save();
+      return redirect('/home');
+    }else{
+      return redirect('auth/login');
+    }
 
   }
 

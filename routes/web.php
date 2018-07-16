@@ -55,4 +55,8 @@ Route::get('/main', function () {
 
 Auth::routes();
 
+Route::get('auth/login', function(){
+  return view('auth.Login');
+});
+
 Route::get('/home', 'HomeController@index')->name('home');
