@@ -17,7 +17,7 @@ class CreateAuthorsTable extends Migration
             $table->increments('authId');
             $table->string('name', 100)->nullable(false);
             $table->Integer('noOfBooksAvail')->default(0);
-
+            $table->timestamps();
         });
     }
 

@@ -40,9 +40,15 @@ Route::post('/returnBooks', 'BooksReturnedController@store');
 Route::get('/addThesis', 'ThesisController@create');
 Route::post('/addThesis', 'ThesisController@store');
 
-Route::get('/thesisList', function () {
-    return view('thesisList');
-});
+Route::get('/importDB', 'importDBcontroller@create');
+Route::post('/importDBfile','importDBcontroller@insertDBFfunc');
+Route::post('/importgetfile','importDBcontroller@rutformatfile');
+
+Route::get('/exportDB', 'exportDBcontroller@create');
+Route::post('/exportDBfile','exportDBcontroller@storeexcel');
+
+
+Route::get('/thesisList', 'ThesisController@index');
 
 Route::get('/', function () {
     return view('welcome');

@@ -8,7 +8,8 @@ use App\thesis;
 class ThesisController extends Controller
 {
     public function index(){
-
+        $thesis=thesis::all();
+        return view('thesisList',['thesis'=>$thesis]);
 
     }
 
