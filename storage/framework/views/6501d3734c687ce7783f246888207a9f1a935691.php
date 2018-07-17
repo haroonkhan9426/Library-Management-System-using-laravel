@@ -10,7 +10,7 @@
          <!-- Bootstrap CSS CDN -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <!-- Our Custom CSS -->
-        <link rel="stylesheet" href="{{asset('css/custom.css')}}">
+        <link rel="stylesheet" href="<?php echo e(asset('css/custom.css')); ?>">
 
     </head>
     <body>
@@ -177,14 +177,15 @@
                         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                             <ul class="nav navbar-nav navbar-right">
                                 <li>
-                                  <a href="{{ route('logout') }}"
+                                  <a href="<?php echo e(route('logout')); ?>"
                                       onclick="event.preventDefault();
                                                document.getElementById('logout-form').submit();">
                                       Logout
                                   </a>
 
-                                  <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                      {{ csrf_field() }}
+                                  <form id="logout-form" action="<?php echo e(route('logout')); ?>" method="POST" style="display: none;">
+                                      <?php echo e(csrf_field()); ?>
+
                                   </form>
                                 </li>
                             </ul>
@@ -192,7 +193,7 @@
                     </div>
                 </nav>
                 <div class="mainContentArea">
-                @yield('content')
+                <?php echo $__env->yieldContent('content'); ?>
                 </div>
             </div>
         </div>
