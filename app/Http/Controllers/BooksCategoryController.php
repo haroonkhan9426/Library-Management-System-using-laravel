@@ -14,13 +14,8 @@ class BooksCategoryController extends Controller
      */
     public function index()
     {
-      if(Auth::check()){
         $cats = booksCategory::all();
         return view('booksCat', ['cats' => $cats]);
-      }else {
-        return redirect('auth/login');
-      }
-
     }
 
     /**
@@ -30,12 +25,7 @@ class BooksCategoryController extends Controller
      */
     public function create()
     {
-      if(Auth::check()){
         return view('addCategory');
-      }else {
-        return redirect('auth/login');
-      }
-
     }
 
     /**
@@ -46,14 +36,11 @@ class BooksCategoryController extends Controller
      */
     public function store(Request $request)
     {
-      if(Auth::check()){
         $cat = new booksCategory;
-        $cat->catName = $request->catName;
-        $cat->save();
-      }else {
-        return redirect('auth/login');
-      }
 
+        $cat->catName = $request->catName;
+
+        $cat->save();
     }
 
     /**

@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\booksReturned;
 use Illuminate\Http\Request;
 
@@ -23,12 +24,7 @@ class BooksReturnedController extends Controller
      */
     public function create()
     {
-      if(Auth::check()){
         return view('returnBooks');
-      }else {
-        return redirect('auth/login');
-      }
-
     }
 
     /**
@@ -39,17 +35,13 @@ class BooksReturnedController extends Controller
      */
     public function store(Request $req)
     {
-      if(Auth::check()){
         booksReturned::create([
           'bookId' => $req->bookId,
           'memId' => $req->memberId,
           'retDate' => $req->returnDate
         ]);
-        return redirect('returnBooks');
-      }else {
-        return redirect('auth/login');
-      }
 
+        return redirect('returnBooks');
     }
 
     /**
