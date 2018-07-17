@@ -136,6 +136,26 @@
                         </ul>
                     </li>
                     <li>
+                        <a href="#dataSubmenu" data-toggle="collapse" aria-expanded="false">
+                            <i class="glyphicon glyphicon-education"></i>
+                            Data
+                        </a>
+                        <ul class="collapse list-unstyled" id="dataSubmenu">
+                            <li>
+                              <a href="importDB">
+                                <i class="glyphicon glyphicon-plus"></i>
+                                import sql
+                              </a>
+                            </li>
+                            <li>
+                              <a href="exportDB">
+                                <i class="glyphicon glyphicon-list"></i>
+                                export sql
+                              </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
                         <a href="#">
                             <i class="glyphicon glyphicon-link"></i>
                             Portfolio
