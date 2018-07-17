@@ -45,7 +45,7 @@ class importDBcontroller extends Controller
         
         //authors
         $authorsdata=[];
-        $authorsdata[]=['authId','name','noOfBooksAvail'];
+        $authorsdata[]=['authId','name','noOfBooksAvail','created_at','updated_at'];
         $sheet0->fromArray($authorsdata,null,'A1');
         //books
         $bookdata=[];

@@ -34,19 +34,19 @@ class exportDBcontroller extends Controller
         $spreadsheet = new Spreadsheet();
         $sheet0=new \PhpOffice\PhpSpreadsheet\Worksheet\Worksheet($spreadsheet, 'authors');
         $sheet1=new \PhpOffice\PhpSpreadsheet\Worksheet\Worksheet($spreadsheet, 'books');
-        $sheet2=new \PhpOffice\PhpSpreadsheet\Worksheet\Worksheet($spreadsheet, 'book_categories');
-        $sheet3=new \PhpOffice\PhpSpreadsheet\Worksheet\Worksheet($spreadsheet, 'books_issued');
-        $sheet4=new \PhpOffice\PhpSpreadsheet\Worksheet\Worksheet($spreadsheet, 'books_returneds');
-        $sheet5=new \PhpOffice\PhpSpreadsheet\Worksheet\Worksheet($spreadsheet, 'members');
-        $sheet6=new \PhpOffice\PhpSpreadsheet\Worksheet\Worksheet($spreadsheet, 'mem_staffs');
-        $sheet7=new \PhpOffice\PhpSpreadsheet\Worksheet\Worksheet($spreadsheet, 'mem_students');
+        $sheet2=new \PhpOffice\PhpSpreadsheet\Worksheet\Worksheet($spreadsheet, 'bookscatagory');
+        $sheet3=new \PhpOffice\PhpSpreadsheet\Worksheet\Worksheet($spreadsheet, 'booksissued');
+        $sheet4=new \PhpOffice\PhpSpreadsheet\Worksheet\Worksheet($spreadsheet, 'booksreturned');
+        $sheet5=new \PhpOffice\PhpSpreadsheet\Worksheet\Worksheet($spreadsheet, 'member');
+        $sheet6=new \PhpOffice\PhpSpreadsheet\Worksheet\Worksheet($spreadsheet, 'memstaff');
+        $sheet7=new \PhpOffice\PhpSpreadsheet\Worksheet\Worksheet($spreadsheet, 'memstudent');
         $sheet8=new \PhpOffice\PhpSpreadsheet\Worksheet\Worksheet($spreadsheet, 'thesis');
-        $sheet9=new \PhpOffice\PhpSpreadsheet\Worksheet\Worksheet($spreadsheet, 'users');
+        $sheet9=new \PhpOffice\PhpSpreadsheet\Worksheet\Worksheet($spreadsheet, 'User');
         
         //authors
         $authors=authors::all();
         $authorsdata=[];
-        $authorsdata[]=['authId','name','noOfBooksAvail'];
+        $authorsdata[]=['authId','name','noOfBooksAvail','created_at','updated_at'];
         foreach ($authors as $author) {
             $authorsdata[]=$author->toArray();
         }
