@@ -136,6 +136,26 @@
                         </ul>
                     </li>
                     <li>
+                        <a href="#dataSubmenu" data-toggle="collapse" aria-expanded="false">
+                            <i class="glyphicon glyphicon-education"></i>
+                            Data
+                        </a>
+                        <ul class="collapse list-unstyled" id="dataSubmenu">
+                            <li>
+                              <a href="importDB">
+                                <i class="glyphicon glyphicon-plus"></i>
+                                import sql
+                              </a>
+                            </li>
+                            <li>
+                              <a href="exportDB">
+                                <i class="glyphicon glyphicon-list"></i>
+                                export sql
+                              </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
                         <a href="#">
                             <i class="glyphicon glyphicon-link"></i>
                             Portfolio
@@ -154,11 +174,6 @@
                         </a>
                     </li>
                 </ul>
-
-                <ul class="list-unstyled CTAs">
-                    <li><a href="https://bootstrapious.com/tutorial/files/sidebar.zip" class="download">Download source</a></li>
-                    <li><a href="https://bootstrapious.com/p/bootstrap-sidebar" class="article">Back to article</a></li>
-                </ul>
             </nav>
 
             <!-- Page Content Holder -->
@@ -176,17 +191,7 @@
 
                         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                             <ul class="nav navbar-nav navbar-right">
-                                <li>
-                                  <a href="{{ route('logout') }}"
-                                      onclick="event.preventDefault();
-                                               document.getElementById('logout-form').submit();">
-                                      Logout
-                                  </a>
-
-                                  <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                      {{ csrf_field() }}
-                                  </form>
-                                </li>
+                                <li><a href="#">Logout</a></li>
                             </ul>
                         </div>
                     </div>

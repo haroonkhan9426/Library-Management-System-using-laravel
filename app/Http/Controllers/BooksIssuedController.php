@@ -14,15 +14,10 @@ class BooksIssuedController extends Controller
    */
   public function index()
   {
-    if(Auth::check()){
-
-    }else {
-      return redirect('auth/login');
-    }
       $books = booksIssued::all();
       return view('issuedBooks', ['books' => $books]);
   }
-
+  
   /**
    * Show the form for creating a new resource.
    *
@@ -30,12 +25,7 @@ class BooksIssuedController extends Controller
    */
   public function create()
   {
-    if(Auth::check()){
       return view('issueBooks');
-    }else {
-      return redirect('auth/login');
-    }
-
   }
 
   /**
@@ -46,18 +36,14 @@ class BooksIssuedController extends Controller
    */
   public function store(Request $req)
   {
-    if(Auth::check()){
       $check = booksIssued::create([
         'issueDate' => $req->issueDate,
         'retDate' => $req->returnDate,
         'bookId' => $req->bookId,
         'memId' => $req->memberId
       ]);
-      return redirect('/issueBooks');
-    }else {
-      return redirect('auth/login');
-    }
 
+      return redirect('/issueBooks');
   }
 
   /**

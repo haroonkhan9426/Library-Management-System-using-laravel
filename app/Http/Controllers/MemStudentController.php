@@ -23,12 +23,7 @@ class MemStudentController extends Controller
    */
   public function create()
   {
-    if(Auth::check()){
       return view('addCategory');
-    }else {
-      return redirect('auth/login');
-    }
-
   }
 
   /**
@@ -39,15 +34,11 @@ class MemStudentController extends Controller
    */
   public function store(Request $request)
   {
-    if(Auth::check()){
       $cat = new booksCategory;
+
       $cat->catName = $request->catName;
+
       $cat->save();
-    }else {
-      return redirect('auth/login');
-    }
-
-
   }
 
   /**

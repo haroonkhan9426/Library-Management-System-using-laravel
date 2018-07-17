@@ -23,12 +23,7 @@ class AuthorsController extends Controller
    */
   public function create()
   {
-    if(Auth::check()){
       return view('addCategory');
-    }else{
-      return redirect('auth/login');
-    }
-
   }
 
   /**
@@ -39,14 +34,11 @@ class AuthorsController extends Controller
    */
   public function store(Request $request)
   {
-    if(Auth::check()){
       $cat = new booksCategory;
-      $cat->catName = $request->catName;
-      $cat->save();
-    }else {
-      return redirect('auth/login');
-    }
 
+      $cat->catName = $request->catName;
+
+      $cat->save();
   }
 
   /**
