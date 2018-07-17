@@ -40,15 +40,9 @@ Route::post('/returnBooks', 'BooksReturnedController@store');
 Route::get('/addThesis', 'ThesisController@create');
 Route::post('/addThesis', 'ThesisController@store');
 
-Route::get('/importDB', 'importDBcontroller@create');
-Route::post('/importDBfile','importDBcontroller@insertDBFfunc');
-Route::post('/importgetfile','importDBcontroller@rutformatfile');
-
-Route::get('/exportDB', 'exportDBcontroller@create');
-Route::post('/exportDBfile','exportDBcontroller@storeexcel');
-
-
-Route::get('/thesisList', 'ThesisController@index');
+Route::get('/thesisList', function () {
+    return view('thesisList');
+});
 
 Route::get('/', function () {
     return view('welcome');
@@ -60,5 +54,9 @@ Route::get('/main', function () {
 });
 
 Auth::routes();
+
+Route::get('auth/login', function(){
+  return view('auth.Login');
+});
 
 Route::get('/home', 'HomeController@index')->name('home');
