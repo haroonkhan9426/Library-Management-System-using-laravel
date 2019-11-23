@@ -8118,7 +8118,30 @@ button.close {
 .visible-lg-inline-block {
   display: none !important;
 }
-
+.smenvelope,.smuser, .smmail {
+  float: right;
+  margin-right: 12px;
+  margin-top: -24px;
+  position: relative;
+  z-index: 2;
+  color: #2579a9;
+}
+.smlock {
+  float: right;
+  margin-right: 12px;
+  margin-top: -24px;
+  position: relative;
+  z-index: 2;
+  color: #2579a9;
+}
+.smreg {
+  float: right;
+  margin-right: 8px;
+  margin-top: -24px;
+  position: relative;
+  z-index: 2;
+  color: #2579a9;
+}
 @media (max-width: 767px) {
   .visible-xs {
     display: block !important;

@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/test', function(){
-  return view('test');
-});
+Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
 Route::post('/issueBookSubmit', 'BooksIssuedController@index');
 
 Route::get('/booksList', 'BooksController@index');
@@ -43,11 +41,9 @@ Route::post('/addThesis', 'ThesisController@store');
 Route::get('/thesisList', function () {
     return view('thesisList');
 });
-
-Route::get('/', function () {
-    return view('welcome');
-});
-
+Route::get('/', ['middleware' =>'guest', function(){
+    return view('auth.login');
+  }]);
 
 Route::get('/main', function () {
     return view('layouts.sidebar');

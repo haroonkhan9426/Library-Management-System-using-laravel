@@ -13,8 +13,9 @@
 
                         <div class="custom_field form-group{{ $errors->has('name') ? ' has-error' : '' }}">
                           <div class="inner-addon right-addon">
-                            <i class="glyphicon glyphicon-user"></i>
-                                <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required autofocus placeholder="User Name">
+                          
+                                <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required autofocus placeholder="Student Name">
+                                <span class="fas fa-user smuser"></span>
                           </div>
                                 @if ($errors->has('name'))
                                     <span class="help-block">
@@ -26,8 +27,8 @@
 
                         <div class=" custom_field form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                           <div class="inner-addon right-addon">
-                            <i class="glyphicon glyphicon-envelope"></i>
-                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required placeholder="User e-Mail">
+                             <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required placeholder="Student e-Mail">
+                             <span class="fas fa-envelope-open-text smuser"></span>
                           </div>
                                 @if ($errors->has('email'))
                                     <span class="help-block">
@@ -38,31 +39,24 @@
 
                         <div class="custom_field form-group">
                           <div class="inner-addon right-addon">
-                            <i class="glyphicon glyphicon-list-alt"></i>
+                          
                                 <input id="registeration" type="text" class="form-control" name="reg_no" required placeholder="Registeration No">
+                                <span class="fas fa-user-plus smreg"></span>
                           </div>
                         </div>
 
                         <div class="custom_field form-group">
                           <div class="inner-addon right-addon">
-                            <i class="glyphicon glyphicon-earphone"></i>
                                 <input id="contact_no" type="text" class="form-control" name="contact" required placeholder="Contact">
+                                <span class="fas fa-id-badge smuser"></span>
                           </div>
                         </div>
 
-
-
-                        <div class="custom_field form-group">
-                          <div class="inner-addon right-addon">
-                            <i class="glyphicon glyphicon-check"></i>
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required placeholder="Re-enter Password">
-                          </div>
-                        </div>
 
                         <div class="custom_field form-group{{ $errors->has('password') ? ' has-error' : '' }}">
                           <div class="inner-addon right-addon">
-                            <i class="glyphicon glyphicon-lock"></i>
                                 <input id="password" type="password" class="form-control" name="password" required placeholder="User Password">
+                                <span class="fas fa-lock smlock"></span>
                           </div>
                                 @if ($errors->has('password'))
                                     <span class="help-block">
@@ -73,8 +67,9 @@
 
                         <div class="custom_field form-group">
                           <div class="inner-addon right-addon">
-                            <i class="glyphicon glyphicon-check"></i>
+                          
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required placeholder="Re-enter Password">
+                                <span class="fas fa-unlock-alt smlock"></span>
                           </div>
                         </div>
 
@@ -91,4 +86,5 @@
         </div>
     </div>
 </div>
+
 @endsection

@@ -12,8 +12,9 @@
 
                         <div class="custom_field form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                           <div class="inner-addon right-addon">
-                            <i class="glyphicon glyphicon-envelope"></i>
+                          
                                 <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" placeholder="User e-Mail" required autofocus>
+                                <span class="fas fa-envelope-open-text smenvelope"></span>
                             </div>
                                 @if ($errors->has('email'))
                                     <span class="help-block">
@@ -25,8 +26,9 @@
 
                         <div class="custom_field form-group{{ $errors->has('password') ? ' has-error' : '' }}">
                             <div class="inner-addon right-addon">
-                              <i class="glyphicon glyphicon-lock"></i>
+                            
                                 <input id="password" type="password" class="form-control" name="password" required placeholder="Password">
+                                <span class="fas fa-lock smlock"></span>
                             </div>
                                 @if ($errors->has('password'))
                                     <span class="help-block">

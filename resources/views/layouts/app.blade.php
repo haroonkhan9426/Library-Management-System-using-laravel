@@ -8,14 +8,15 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'DCSE Library') }}</title>
 
     <!-- Styles -->
 
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{{asset('css/custom.css')}}">
 
-
+    <!-- Sc00ripts -->
+    <script src="https://kit.fontawesome.com/f6176b9b9d.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <div id="app">

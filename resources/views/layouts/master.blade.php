@@ -11,7 +11,8 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <!-- Our Custom CSS -->
         <link rel="stylesheet" href="{{asset('css/custom.css')}}">
-
+        <!-- Scripts -->
+        <script src="https://kit.fontawesome.com/f6176b9b9d.js" crossorigin="anonymous"></script>
     </head>
     <body>
         <div class="wrapper">
@@ -155,10 +156,10 @@
                     </li>
                 </ul>
 
-                <ul class="list-unstyled CTAs">
+                {{--<!-- <ul class="list-unstyled CTAs">
                     <li><a href="https://bootstrapious.com/tutorial/files/sidebar.zip" class="download">Download source</a></li>
                     <li><a href="https://bootstrapious.com/p/bootstrap-sidebar" class="article">Back to article</a></li>
-                </ul>
+                </ul> -->--}}
             </nav>
 
             <!-- Page Content Holder -->
@@ -168,15 +169,12 @@
                     <div class="container-fluid">
 
                         <div class="navbar-header">
-                            <button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn">
-                                <i class="glyphicon glyphicon-align-left"></i>
-                                <span>Toggle Sidebar</span>
-                            </button>
+                           
                         </div>
 
                         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                             <ul class="nav navbar-nav navbar-right">
-                                <li><a href="#">Logout</a></li>
+                                <li><a href="{{  url('/logout') }}">Logout</a></li>
                             </ul>
                         </div>
                     </div>
@@ -193,9 +191,9 @@
 
          <script type="text/javascript">
              $(document).ready(function () {
-                 $('#sidebarCollapse').on('click', function () {
+                //  $('#sidebarCollapse').on('click', function () {
                      $('#sidebar').toggleClass('active');
-                 });
+                // });
              });
          </script>
     </body>
