@@ -5693,7 +5693,7 @@ tbody.collapse.in {
 }
 
 .navbar-default .navbar-brand {
-  color: #777;
+  color: #ecf0f1;
 }
 
 .navbar-default .navbar-brand:hover,
@@ -5703,11 +5703,11 @@ tbody.collapse.in {
 }
 
 .navbar-default .navbar-text {
-  color: #777;
+  color: #ecf0f1;
 }
 
 .navbar-default .navbar-nav > li > a {
-  color: #777;
+  color: #ecf0f1;
 }
 
 .navbar-default .navbar-nav > li > a:hover,
