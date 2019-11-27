@@ -7,7 +7,7 @@
             <div class="panel panel-default">
 
                 <div class="panel-body">
-                  <div class="panel-heading text-center form_head"><h2><b>DCSE</b> Library</h2></div>
+                  <div class="panel-heading text-center form_head"><h2><b>MCD</b> Library</h2></div>
                     <form class="form-horizontal" method="POST" action="{{ route('register') }}">
                         {{ csrf_field() }}
 
@@ -86,5 +86,5 @@
         </div>
     </div>
 </div>
-
+<br><br><br><br><br><br>
 @endsection

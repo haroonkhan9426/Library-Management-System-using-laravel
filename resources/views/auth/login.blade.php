@@ -1,12 +1,13 @@
 @extends('layouts.app')
 @section('content')
-<div class="container">
+
+<div class="container" >
     <div class="row">
         <div class="col-md-4 col-md-offset-4">
             <div class="panel panel-default">
 
                 <div class="panel-body">
-                  <div class="panel-heading text-center form_head"><h2><b>DCSE</b> Library</h2></div>
+                  <div class="panel-heading text-center form_head"><h2><b>MCD</b> Library</h2></div>
                     <form class="form-horizontal" method="POST" action="{{ route('login') }}">
                         {{ csrf_field() }}
 
@@ -71,4 +72,5 @@
         </div>
     </div>
 </div>
+<br><br><br><br><br><br><br><br><br><br><br><br>
 @endsection

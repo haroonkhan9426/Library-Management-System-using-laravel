@@ -4,11 +4,11 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <link rel="icon" href="{{ asset('images/books.png') }}" type="image/x-icon">
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'DCSE Library') }}</title>
+    <title>{{ config('app.name', 'MCD Library') }}</title>
 
     <!-- Styles -->
 
@@ -19,8 +19,10 @@
     <script src="https://kit.fontawesome.com/f6176b9b9d.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div id="app">
-        <nav class="navbar navbar-default navbar-static-top">
+    <div id="app" style="background-image: url('{{ url('/') }}/images/library_login_register.jpg'); background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;">
+        <nav class="navbar navbar-default navbar-static-top" style="background-color:#822f30";>
             <div class="container">
                 <div class="navbar-header">
 
@@ -71,8 +73,10 @@
                 </div>
             </div>
         </nav>
-
-        @yield('content')
+  
+            @yield('content')
+  
+        
     </div>
 
 
