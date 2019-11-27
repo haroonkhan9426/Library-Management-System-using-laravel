@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'MCD Library') }}</title>
+    <title>{{ config('app.name', 'DCSE Library') }}</title>
 
     <!-- Styles -->
 
